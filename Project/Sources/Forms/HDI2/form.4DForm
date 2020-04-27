@@ -1,0 +1,1529 @@
+﻿{
+	"destination": "detailScreen",
+	"windowMinWidth": 960,
+	"windowMaxWidth": 960,
+	"windowMinHeight": 640,
+	"windowMaxHeight": 640,
+	"width": 960,
+	"height": 640,
+	"menuBar": "Menu Bar #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tab Control": {
+					"type": "tab",
+					"top": 20,
+					"left": 20,
+					"width": 920,
+					"height": 560,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "_TabTitles",
+					"dataSourceTypeHint": "arrayText",
+					"action": "gotoPage",
+					"events": [
+						"onClick"
+					]
+				},
+				"Button": {
+					"type": "button",
+					"top": 600,
+					"left": 790,
+					"width": 70,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Cancel"
+					},
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Cancel",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					]
+				},
+				"Button1": {
+					"type": "button",
+					"top": 600,
+					"left": 870,
+					"width": 70,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/OK"
+					},
+					"action": "accept",
+					"shortcutKey": "[Enter]",
+					"text": "OK",
+					"class": "Buttons_13",
+					"defaultButton": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line": {
+					"type": "line",
+					"top": 0,
+					"left": 480,
+					"height": 640,
+					"visibility": "hidden",
+					"sizingY": "grow",
+					"stroke": "#800080",
+					"strokeDashArray": "1 1",
+					"width": 0,
+					"startPoint": "topLeft"
+				}
+			}
+		},
+		{
+			"objects": {
+				"information": {
+					"type": "input",
+					"top": 80,
+					"left": 80,
+					"width": 800,
+					"height": 480,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "_Descriptions{1}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"information2": {
+					"type": "input",
+					"top": 80,
+					"left": 40,
+					"width": 440,
+					"height": 480,
+					"sizingY": "grow",
+					"dataSource": "_Descriptions{2}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"olbl_host_running": {
+					"type": "text",
+					"text": "Running",
+					"top": 151,
+					"left": 627,
+					"width": 66,
+					"height": 16,
+					"textAlign": "left",
+					"stroke": "#00AC00",
+					"fontWeight": "bold"
+				},
+				"olbl_host_stopped": {
+					"type": "text",
+					"text": "Stopped",
+					"top": 151,
+					"left": 627,
+					"width": 66,
+					"height": 16,
+					"textAlign": "left",
+					"stroke": "#ff0000",
+					"fontWeight": "bold"
+				},
+				"Text19": {
+					"type": "text",
+					"text": "Default homepage:",
+					"top": 180,
+					"left": 490,
+					"width": 120,
+					"height": 16
+				},
+				"Input2": {
+					"type": "input",
+					"left": 627,
+					"top": 180,
+					"width": 301,
+					"height": 17,
+					"dataSource": "Form:C1466.hostSettings.defaultHomepage",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"Input19": {
+					"type": "input",
+					"left": 627,
+					"top": 208,
+					"width": 61,
+					"height": 17,
+					"dataSource": "Form:C1466.hostSettings.HTTPPort",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"Text33": {
+					"type": "text",
+					"text": "HTTPPort:",
+					"top": 209,
+					"left": 490,
+					"width": 91,
+					"height": 16
+				},
+				"Check Box7": {
+					"type": "checkbox",
+					"text": "Trace HTTP",
+					"top": 290,
+					"left": 627,
+					"width": 98,
+					"height": 21,
+					"events": [],
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.hostSettings.HTTPTrace",
+					"focusable": false
+				},
+				"Text34": {
+					"type": "text",
+					"text": "Min TLS version:",
+					"top": 265,
+					"left": 490,
+					"width": 103,
+					"height": 16
+				},
+				"Input20": {
+					"type": "input",
+					"left": 627,
+					"top": 265,
+					"width": 41,
+					"height": 17,
+					"dataSource": "Form:C1466.hostSettings.minTLSVersion",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"Input27": {
+					"type": "input",
+					"left": 627,
+					"top": 236,
+					"width": 61,
+					"height": 17,
+					"dataSource": "Form:C1466.hostSettings.HTTPSPort",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"Text35": {
+					"type": "text",
+					"text": "HTTPSPort:",
+					"top": 237,
+					"left": 490,
+					"width": 91,
+					"height": 16
+				},
+				"Text36": {
+					"type": "text",
+					"text": "Current state:",
+					"top": 151,
+					"left": 490,
+					"width": 120,
+					"height": 16
+				},
+				"Button8": {
+					"type": "button",
+					"top": 368,
+					"left": 579,
+					"width": 281,
+					"height": 20,
+					"sizingX": "fixed",
+					"sizingY": "move",
+					"action": "",
+					"shortcutKey": "[Esc]",
+					"text": "Start web server with stored settings",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button8.4dm"
+				},
+				"Button9": {
+					"type": "button",
+					"top": 396,
+					"left": 579,
+					"width": 281,
+					"height": 20,
+					"sizingX": "fixed",
+					"sizingY": "move",
+					"action": "",
+					"shortcutKey": "[Esc]",
+					"text": "Start web server with updated settings",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button9.4dm"
+				},
+				"Button10": {
+					"type": "button",
+					"top": 424,
+					"left": 579,
+					"width": 281,
+					"height": 20,
+					"sizingX": "fixed",
+					"sizingY": "move",
+					"action": "",
+					"shortcutKey": "[Esc]",
+					"text": "Stop web server",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button10.4dm"
+				},
+				"Button11": {
+					"type": "button",
+					"top": 452,
+					"left": 579,
+					"width": 281,
+					"height": 20,
+					"sizingX": "fixed",
+					"sizingY": "move",
+					"action": "",
+					"shortcutKey": "[Esc]",
+					"text": "Test default homepage",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button11.4dm"
+				},
+				"ochk_trace1": {
+					"type": "checkbox",
+					"text": "TRACE",
+					"top": 556,
+					"left": 867,
+					"width": 67,
+					"height": 13,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.trace"
+				}
+			},
+			"entryOrder": [
+				"information2",
+				"Input2",
+				"Input19",
+				"Input27",
+				"Input20",
+				"Check Box7",
+				"Button8",
+				"Button9",
+				"Button10",
+				"Button11",
+				"ochk_trace1"
+			]
+		},
+		{
+			"objects": {
+				"information1": {
+					"type": "input",
+					"top": 80,
+					"left": 40,
+					"width": 440,
+					"height": 480,
+					"sizingY": "grow",
+					"dataSource": "_Descriptions{3}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"olbl_component_running": {
+					"type": "text",
+					"text": "Running",
+					"top": 151,
+					"left": 627,
+					"width": 66,
+					"height": 16,
+					"textAlign": "left",
+					"stroke": "#00AC00",
+					"fontWeight": "bold"
+				},
+				"olbl_component_stopped": {
+					"type": "text",
+					"text": "Stopped",
+					"top": 151,
+					"left": 627,
+					"width": 66,
+					"height": 16,
+					"textAlign": "left",
+					"stroke": "#ff0000",
+					"fontWeight": "bold"
+				},
+				"Text3": {
+					"type": "text",
+					"text": "Default homepage:",
+					"top": 180,
+					"left": 490,
+					"width": 120,
+					"height": 16
+				},
+				"Input4": {
+					"type": "input",
+					"left": 627,
+					"top": 180,
+					"width": 301,
+					"height": 17,
+					"dataSource": "Form:C1466.componentSettings.defaultHomepage",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"Input5": {
+					"type": "input",
+					"left": 627,
+					"top": 208,
+					"width": 61,
+					"height": 17,
+					"dataSource": "Form:C1466.componentSettings.HTTPPort",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"Text4": {
+					"type": "text",
+					"text": "HTTPPort:",
+					"top": 209,
+					"left": 490,
+					"width": 91,
+					"height": 16
+				},
+				"Check Box1": {
+					"type": "checkbox",
+					"text": "Trace HTTP",
+					"top": 290,
+					"left": 627,
+					"width": 98,
+					"height": 21,
+					"events": [],
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.componentSettings.HTTPTrace",
+					"focusable": false
+				},
+				"Text5": {
+					"type": "text",
+					"text": "Min TLS version:",
+					"top": 265,
+					"left": 490,
+					"width": 103,
+					"height": 16
+				},
+				"Input6": {
+					"type": "input",
+					"left": 627,
+					"top": 265,
+					"width": 41,
+					"height": 17,
+					"dataSource": "Form:C1466.componentSettings.minTLSVersion",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"Input7": {
+					"type": "input",
+					"left": 627,
+					"top": 236,
+					"width": 61,
+					"height": 17,
+					"dataSource": "Form:C1466.componentSettings.HTTPSPort",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"Text6": {
+					"type": "text",
+					"text": "HTTPSPort:",
+					"top": 237,
+					"left": 490,
+					"width": 91,
+					"height": 16
+				},
+				"Text8": {
+					"type": "text",
+					"text": "Current state:",
+					"top": 151,
+					"left": 490,
+					"width": 120,
+					"height": 16
+				},
+				"Button12": {
+					"type": "button",
+					"top": 368,
+					"left": 579,
+					"width": 281,
+					"height": 20,
+					"sizingX": "fixed",
+					"sizingY": "move",
+					"action": "",
+					"shortcutKey": "[Esc]",
+					"text": "Start web server with stored settings",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button12.4dm"
+				},
+				"Button13": {
+					"type": "button",
+					"top": 396,
+					"left": 579,
+					"width": 281,
+					"height": 20,
+					"sizingX": "fixed",
+					"sizingY": "move",
+					"action": "",
+					"shortcutKey": "[Esc]",
+					"text": "Start web server with updated settings",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button13.4dm"
+				},
+				"Button14": {
+					"type": "button",
+					"top": 424,
+					"left": 579,
+					"width": 281,
+					"height": 20,
+					"sizingX": "fixed",
+					"sizingY": "move",
+					"action": "",
+					"shortcutKey": "[Esc]",
+					"text": "Stop web server",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button14.4dm"
+				},
+				"Button15": {
+					"type": "button",
+					"top": 452,
+					"left": 579,
+					"width": 281,
+					"height": 20,
+					"sizingX": "fixed",
+					"sizingY": "move",
+					"action": "",
+					"shortcutKey": "[Esc]",
+					"text": "Test default homepage",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button15.4dm"
+				},
+				"ochk_trace2": {
+					"type": "checkbox",
+					"text": "TRACE",
+					"top": 556,
+					"left": 867,
+					"width": 67,
+					"height": 13,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.trace"
+				}
+			},
+			"entryOrder": [
+				"information1",
+				"Input4",
+				"Input5",
+				"Input7",
+				"Input6",
+				"Check Box1",
+				"Button12",
+				"Button13",
+				"Button14",
+				"Button15",
+				"ochk_trace2"
+			]
+		},
+		{
+			"objects": {
+				"ogrp_settings": {
+					"type": "groupBox",
+					"text": "Settings:",
+					"top": 148,
+					"left": 318,
+					"width": 616,
+					"height": 398
+				},
+				"ogrp_state": {
+					"type": "groupBox",
+					"text": "State:",
+					"top": 68,
+					"left": 318,
+					"width": 616,
+					"height": 76
+				},
+				"olbx_webServers": {
+					"type": "listbox",
+					"left": 29,
+					"top": 96,
+					"width": 281,
+					"height": 275,
+					"events": [
+						"onSelectionChange"
+					],
+					"scrollbarHorizontal": "hidden",
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.activeWebServers",
+					"currentItemSource": "Form:C1466.currentWebServer",
+					"selectionMode": "single",
+					"currentItemPositionSource": "Form:C1466.currentWebServerItem",
+					"selectedItemsSource": "Form:C1466.selectedWebServers",
+					"method": "ObjectMethods/olbx_webServers.4dm",
+					"sizingY": "grow",
+					"columns": [
+						{
+							"header": {
+								"text": "Database",
+								"name": "ohdr_databaseName"
+							},
+							"name": "ocol_databaseName",
+							"footer": {
+								"name": "Footer1"
+							},
+							"dataSource": "This:C1470.name",
+							"width": 265,
+							"enterable": false,
+							"resizable": false
+						}
+					]
+				},
+				"Text": {
+					"type": "text",
+					"text": "Select a database web server to manage:",
+					"top": 68,
+					"left": 29,
+					"width": 291,
+					"height": 16
+				},
+				"Text1": {
+					"type": "text",
+					"text": "Name:",
+					"top": 96,
+					"left": 330,
+					"width": 86,
+					"height": 16
+				},
+				"Input1": {
+					"type": "input",
+					"left": 447,
+					"top": 96,
+					"width": 412,
+					"height": 17,
+					"dataSource": "Form:C1466.currentWS.name",
+					"enterable": false,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"Button2": {
+					"type": "button",
+					"top": 379,
+					"left": 29,
+					"width": 281,
+					"height": 20,
+					"sizingX": "fixed",
+					"sizingY": "move",
+					"action": "",
+					"shortcutKey": "[Esc]",
+					"text": "Start web server with stored settings",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button2.4dm"
+				},
+				"Button3": {
+					"type": "button",
+					"top": 407,
+					"left": 29,
+					"width": 281,
+					"height": 20,
+					"sizingX": "fixed",
+					"sizingY": "move",
+					"action": "",
+					"shortcutKey": "[Esc]",
+					"text": "Start web server with updated settings",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button3.4dm"
+				},
+				"Button4": {
+					"type": "button",
+					"top": 435,
+					"left": 29,
+					"width": 281,
+					"height": 20,
+					"sizingX": "fixed",
+					"sizingY": "move",
+					"action": "",
+					"shortcutKey": "[Esc]",
+					"text": "Stop web server",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button4.4dm"
+				},
+				"Button5": {
+					"type": "button",
+					"top": 463,
+					"left": 29,
+					"width": 281,
+					"height": 20,
+					"sizingX": "fixed",
+					"sizingY": "move",
+					"action": "",
+					"shortcutKey": "[Esc]",
+					"text": "Test default homepage",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button5.4dm"
+				},
+				"Text2": {
+					"type": "text",
+					"text": "OpenSSL version:",
+					"top": 118,
+					"left": 330,
+					"width": 110,
+					"height": 16
+				},
+				"Input3": {
+					"type": "input",
+					"left": 447,
+					"top": 118,
+					"width": 293,
+					"height": 17,
+					"dataSource": "Form:C1466.currentWS.openSSLVersion",
+					"enterable": false,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text4": {
+					"type": "text",
+					"text": "Default homepage:",
+					"top": 180,
+					"left": 330,
+					"width": 120,
+					"height": 16
+				},
+				"vp_Input5": {
+					"type": "input",
+					"left": 447,
+					"top": 180,
+					"width": 481,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.defaultHomepage",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text5": {
+					"type": "text",
+					"text": "Root folder:",
+					"top": 202,
+					"left": 330,
+					"width": 120,
+					"height": 16
+				},
+				"vp_Input6": {
+					"type": "input",
+					"left": 447,
+					"top": 202,
+					"width": 481,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.rootFolder",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text6": {
+					"type": "text",
+					"text": "Character set:",
+					"top": 466,
+					"left": 330,
+					"width": 120,
+					"height": 16
+				},
+				"vp_Input7": {
+					"type": "input",
+					"left": 447,
+					"top": 466,
+					"width": 41,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.characterSet",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"Text7": {
+					"type": "text",
+					"text": "vp_IP to listen:",
+					"top": 246,
+					"left": 330,
+					"width": 120,
+					"height": 16
+				},
+				"vp_Input8": {
+					"type": "input",
+					"left": 447,
+					"top": 246,
+					"width": 481,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.IPAddressToListen",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text8": {
+					"type": "text",
+					"text": "Debug log:",
+					"top": 466,
+					"left": 570,
+					"width": 75,
+					"height": 16
+				},
+				"vp_Input9": {
+					"type": "input",
+					"left": 647,
+					"top": 466,
+					"width": 41,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.debugLog",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text9": {
+					"type": "text",
+					"text": "HSTS:",
+					"top": 312,
+					"left": 330,
+					"width": 120,
+					"height": 16
+				},
+				"vp_Input10": {
+					"type": "input",
+					"left": 601,
+					"top": 312,
+					"width": 121,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.HSTSMaxAge",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text10": {
+					"type": "text",
+					"text": "HTTP:",
+					"top": 268,
+					"left": 330,
+					"width": 120,
+					"height": 16
+				},
+				"vp_Text12": {
+					"type": "text",
+					"text": "Sessions:",
+					"top": 334,
+					"left": 330,
+					"width": 120,
+					"height": 16
+				},
+				"vp_Text14": {
+					"type": "text",
+					"text": "Domain:",
+					"top": 357,
+					"left": 447,
+					"width": 56,
+					"height": 16
+				},
+				"vp_Input15": {
+					"type": "input",
+					"left": 507,
+					"top": 356,
+					"width": 421,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.sessionCookieDomain",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Check Box1": {
+					"type": "checkbox",
+					"text": "Enabled",
+					"top": 310,
+					"left": 447,
+					"width": 71,
+					"height": 21,
+					"events": [],
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.currentSettings.HSTSEnabled",
+					"focusable": false
+				},
+				"vp_Text20": {
+					"type": "text",
+					"text": "Max age:",
+					"top": 312,
+					"left": 538,
+					"width": 60,
+					"height": 16
+				},
+				"vp_Check Box2": {
+					"type": "checkbox",
+					"text": "Enabled",
+					"top": 266,
+					"left": 447,
+					"width": 73,
+					"height": 21,
+					"events": [],
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.currentSettings.HTTPEnabled",
+					"focusable": false
+				},
+				"vp_Input21": {
+					"type": "input",
+					"left": 574,
+					"top": 268,
+					"width": 61,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.HTTPPort",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text21": {
+					"type": "text",
+					"text": "Port:",
+					"top": 268,
+					"left": 538,
+					"width": 31,
+					"height": 16
+				},
+				"vp_Check Box3": {
+					"type": "checkbox",
+					"text": "Trace HTTP",
+					"top": 266,
+					"left": 830,
+					"width": 98,
+					"height": 21,
+					"events": [],
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.currentSettings.HTTPTrace",
+					"focusable": false
+				},
+				"vp_Input22": {
+					"type": "input",
+					"left": 489,
+					"top": 444,
+					"width": 41,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.HTTPCompressionLevel",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text22": {
+					"type": "text",
+					"text": "Level:",
+					"top": 444,
+					"left": 448,
+					"width": 42,
+					"height": 16
+				},
+				"vp_Input11": {
+					"type": "input",
+					"left": 708,
+					"top": 444,
+					"width": 61,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.HTTPCompressionThreshold",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text23": {
+					"type": "text",
+					"text": "Threshold:",
+					"top": 444,
+					"left": 638,
+					"width": 68,
+					"height": 16
+				},
+				"vp_Text11": {
+					"type": "text",
+					"text": "HTTPS:",
+					"top": 290,
+					"left": 330,
+					"width": 120,
+					"height": 16
+				},
+				"vp_Check Box4": {
+					"type": "checkbox",
+					"text": "Enabled",
+					"top": 288,
+					"left": 447,
+					"width": 73,
+					"height": 21,
+					"events": [],
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.currentSettings.HTTPSEnabled",
+					"focusable": false
+				},
+				"vp_Input12": {
+					"type": "input",
+					"left": 574,
+					"top": 290,
+					"width": 61,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.HTTPSPort",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text24": {
+					"type": "text",
+					"text": "Port:",
+					"top": 290,
+					"left": 538,
+					"width": 31,
+					"height": 16
+				},
+				"vp_Text25": {
+					"type": "text",
+					"text": "Log recording:",
+					"top": 466,
+					"left": 794,
+					"width": 89,
+					"height": 16
+				},
+				"vp_Input23": {
+					"type": "input",
+					"left": 887,
+					"top": 466,
+					"width": 41,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.logRecording",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Check Box5": {
+					"type": "checkbox",
+					"text": "Keep",
+					"top": 332,
+					"left": 447,
+					"width": 73,
+					"height": 21,
+					"events": [],
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.currentSettings.keepSession",
+					"focusable": false
+				},
+				"vp_Input13": {
+					"type": "input",
+					"left": 574,
+					"top": 334,
+					"width": 41,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.maxSessions",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text26": {
+					"type": "text",
+					"text": "Max:",
+					"top": 334,
+					"left": 538,
+					"width": 31,
+					"height": 16
+				},
+				"vp_Text13": {
+					"type": "text",
+					"text": "Processes:",
+					"top": 422,
+					"left": 330,
+					"width": 120,
+					"height": 16
+				},
+				"vp_Input14": {
+					"type": "input",
+					"left": 744,
+					"top": 422,
+					"width": 61,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.inactiveProcessTimeout",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text27": {
+					"type": "text",
+					"text": "Inactive timeout:",
+					"top": 422,
+					"left": 638,
+					"width": 111,
+					"height": 16
+				},
+				"vp_Input24": {
+					"type": "input",
+					"left": 554,
+					"top": 422,
+					"width": 61,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.maxConcurrentProcesses",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text28": {
+					"type": "text",
+					"text": "Max concurrent:",
+					"top": 422,
+					"left": 448,
+					"width": 111,
+					"height": 16
+				},
+				"vp_Input25": {
+					"type": "input",
+					"left": 764,
+					"top": 334,
+					"width": 41,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.inactiveSessionTimeout",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text29": {
+					"type": "text",
+					"text": "Inactive timeout:",
+					"top": 334,
+					"left": 658,
+					"width": 111,
+					"height": 16
+				},
+				"vp_Check Box6": {
+					"type": "checkbox",
+					"text": "IP validation",
+					"top": 332,
+					"left": 832,
+					"width": 96,
+					"height": 21,
+					"events": [],
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.currentSettings.sessionIPAddressValidation",
+					"focusable": false
+				},
+				"vp_Text15": {
+					"type": "text",
+					"text": "Name:",
+					"top": 379,
+					"left": 447,
+					"width": 56,
+					"height": 16
+				},
+				"vp_Input16": {
+					"type": "input",
+					"left": 507,
+					"top": 378,
+					"width": 421,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.sessionCookieName",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text30": {
+					"type": "text",
+					"text": "Path:",
+					"top": 401,
+					"left": 447,
+					"width": 56,
+					"height": 16
+				},
+				"vp_Input26": {
+					"type": "input",
+					"left": 507,
+					"top": 400,
+					"width": 421,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.sessionCookiePath",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text3": {
+					"type": "text",
+					"text": "Certificate folder:",
+					"top": 224,
+					"left": 330,
+					"width": 120,
+					"height": 16
+				},
+				"vp_Input4": {
+					"type": "input",
+					"left": 447,
+					"top": 224,
+					"width": 481,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.certificateFolder",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text16": {
+					"type": "text",
+					"text": "Cipher suite:",
+					"top": 488,
+					"left": 330,
+					"width": 120,
+					"height": 16
+				},
+				"vp_Input17": {
+					"type": "input",
+					"left": 447,
+					"top": 488,
+					"width": 481,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.cipherSuite",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text17": {
+					"type": "text",
+					"text": "Min TLS version:",
+					"top": 511,
+					"left": 330,
+					"width": 103,
+					"height": 16
+				},
+				"vp_Input18": {
+					"type": "input",
+					"left": 447,
+					"top": 511,
+					"width": 41,
+					"height": 17,
+					"dataSource": "Form:C1466.currentSettings.minTLSVersion",
+					"enterable": true,
+					"focusable": false,
+					"sizingX": "grow",
+					"contextMenu": "automatic"
+				},
+				"vp_Text18": {
+					"type": "text",
+					"text": "Session cookie:",
+					"top": 356,
+					"left": 330,
+					"width": 120,
+					"height": 16
+				},
+				"vp_Text31": {
+					"type": "text",
+					"text": "Compression:",
+					"top": 444,
+					"left": 330,
+					"width": 120,
+					"height": 16
+				},
+				"olbl_currentWS_Running": {
+					"type": "text",
+					"text": "Running",
+					"top": 96,
+					"left": 862,
+					"width": 66,
+					"height": 16,
+					"textAlign": "right",
+					"stroke": "#00AC00",
+					"fontWeight": "bold"
+				},
+				"olbl_currentWS_Stopped": {
+					"type": "text",
+					"text": "Stopped",
+					"top": 96,
+					"left": 862,
+					"width": 66,
+					"height": 16,
+					"textAlign": "right",
+					"stroke": "#ff0000",
+					"fontWeight": "bold"
+				},
+				"Text32": {
+					"type": "text",
+					"text": "Perfect forward secrecy",
+					"top": 118,
+					"left": 751,
+					"width": 150,
+					"height": 16
+				},
+				"olbl_PFSon": {
+					"type": "text",
+					"text": "ON",
+					"top": 118,
+					"left": 900,
+					"width": 26,
+					"height": 16,
+					"textAlign": "right",
+					"stroke": "#00AC00"
+				},
+				"olbl_PFSoff": {
+					"type": "text",
+					"text": "OFF",
+					"top": 118,
+					"left": 900,
+					"width": 26,
+					"height": 16,
+					"textAlign": "right",
+					"stroke": "#ff0000"
+				},
+				"Button6": {
+					"type": "button",
+					"top": 491,
+					"left": 29,
+					"width": 281,
+					"height": 20,
+					"sizingX": "fixed",
+					"sizingY": "move",
+					"action": "",
+					"shortcutKey": "[Esc]",
+					"text": "Test On Web Connection",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button6.4dm"
+				},
+				"Button7": {
+					"type": "button",
+					"top": 519,
+					"left": 29,
+					"width": 281,
+					"height": 20,
+					"sizingX": "fixed",
+					"sizingY": "move",
+					"action": "",
+					"shortcutKey": "[Esc]",
+					"text": "Test On Web Authentication",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button7.4dm"
+				},
+				"ochk_trace4": {
+					"type": "checkbox",
+					"text": "TRACE",
+					"top": 556,
+					"left": 867,
+					"width": 67,
+					"height": 13,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.trace"
+				},
+				"olbx_currentSettings": {
+					"type": "listbox",
+					"left": 327,
+					"top": 177,
+					"width": 601,
+					"height": 351,
+					"events": [
+						"onClick",
+						"onHeaderClick",
+						"onDataChange",
+						"onSelectionChange"
+					],
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"scrollbarHorizontal": "hidden",
+					"columns": [
+						{
+							"header": {
+								"text": "Settings",
+								"name": "ohdr_settings"
+							},
+							"name": "ocol_settings",
+							"dataSource": "_currentSettingsAttributes",
+							"footer": {
+								"name": "Footer2"
+							},
+							"width": 270,
+							"resizable": false,
+							"enterable": false
+						},
+						{
+							"header": {
+								"name": "ohdr_values",
+								"text": "Values"
+							},
+							"name": "ocol_values",
+							"dataSource": "_currentSettingsValues",
+							"footer": {
+								"name": "Footer3"
+							},
+							"width": 315,
+							"method": "ObjectMethods/ocol_values.4dm",
+							"events": [
+								"onDataChange"
+							]
+						}
+					]
+				},
+				"Button16": {
+					"type": "button",
+					"text": "View Pro",
+					"top": 0,
+					"left": 990,
+					"width": 61,
+					"height": 26,
+					"events": [
+						"onClick"
+					],
+					"sizingX": "move",
+					"sizingY": "move",
+					"shortcutAccel": false,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"shortcutKey": "[F2]",
+					"method": "ObjectMethods/Button16.4dm"
+				}
+			},
+			"entryOrder": [
+				"olbx_webServers",
+				"Button2",
+				"Button3",
+				"Button4",
+				"Button5",
+				"Button6",
+				"Button7",
+				"olbx_currentSettings",
+				"Input1",
+				"Input3",
+				"vp_Input5",
+				"vp_Input6",
+				"vp_Input4",
+				"vp_Input8",
+				"vp_Check Box2",
+				"vp_Input21",
+				"vp_Check Box3",
+				"vp_Check Box4",
+				"vp_Input12",
+				"vp_Check Box1",
+				"vp_Input10",
+				"vp_Check Box5",
+				"vp_Input13",
+				"vp_Input25",
+				"vp_Check Box6",
+				"vp_Input15",
+				"vp_Input16",
+				"vp_Input26",
+				"vp_Input24",
+				"vp_Input14",
+				"vp_Input22",
+				"vp_Input11",
+				"vp_Input7",
+				"vp_Input9",
+				"vp_Input23",
+				"vp_Input17",
+				"vp_Input18",
+				"ochk_trace4",
+				"Button16"
+			]
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"memorizeGeometry": false
+}

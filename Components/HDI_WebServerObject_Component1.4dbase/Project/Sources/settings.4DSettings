@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><preferences stamp="4">
+	<com.4d>
+		<compiler>
+			<options compilation_path="3"/>
+		</compiler>
+		<web>
+			<standalone_server>
+				<configuration https_port_number="4431" port_number="8081">
+					<hosts>
+						<host home_page="indexComponent1.html" id="0" name="default"/>
+					</hosts>
+				</configuration>
+			</standalone_server>
+		</web>
+	</com.4d>
+</preferences>

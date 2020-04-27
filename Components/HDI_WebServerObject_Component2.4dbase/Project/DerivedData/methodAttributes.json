@@ -1,0 +1,19 @@
+﻿{
+	"methods": {
+		"wsoc2_getObject": {
+			"timeStamp": "2020-03-03T14:59:18.117Z",
+			"attributes": {
+				"shared": true
+			}
+		},
+		"stopWebServer": {
+			"timeStamp": "2020-03-03T16:10:17.056Z"
+		},
+		"compiler_Methods": {
+			"timeStamp": "2020-03-03T16:28:01.849Z"
+		},
+		"startWebServer": {
+			"timeStamp": "2020-03-03T16:10:25.512Z"
+		}
+	}
+}

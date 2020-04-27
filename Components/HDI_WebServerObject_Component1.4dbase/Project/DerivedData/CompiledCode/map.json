@@ -1,0 +1,33 @@
+﻿{
+	"map": [
+		{
+			"id": 2147483647,
+			"path": "Sources/Methods/stopWebServer.4dm"
+		},
+		{
+			"id": 2147483646,
+			"path": "Sources/Methods/wsoc1_getObject.4dm"
+		},
+		{
+			"id": 2147483645,
+			"path": "Sources/Methods/compiler_Methods.4dm"
+		},
+		{
+			"id": 2147483644,
+			"path": "Sources/Methods/startWebServer.4dm"
+		},
+		{
+			"id": 2147483643,
+			"path": "Sources/DatabaseMethods/onStartup.4dm"
+		},
+		{
+			"id": 2147483642,
+			"path": "Sources/DatabaseMethods/onWebConnection.4dm"
+		},
+		{
+			"id": 2147483641,
+			"path": "Sources/DatabaseMethods/onWebAuthentication.4dm"
+		}
+	],
+	"arch64": true
+}
