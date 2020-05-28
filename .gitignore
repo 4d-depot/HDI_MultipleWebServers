@@ -6,15 +6,6 @@
 .git/
 
 #--------------------------------
-# Ignore data file
-#--------------------------------
-[dD][aA][tT][aA]/
-*.4DD
-*.journal
-*.4DIndx
-*.Match
-
-#--------------------------------
 # Ignore derived data
 #--------------------------------
 Project/DerivedData/
@@ -28,8 +19,7 @@ Logs/
 # Ignore settings & preferences
 #--------------------------------
 userPreferences.*/
-Settings/
-#!buildApp.4DSettings
+buildApp.4DSettings
 
 #--------------------------------
 # Miscellaneous
